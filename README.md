@@ -1,6 +1,6 @@
 # Sprint de Desenvolupament Frontend
 
-![Exemple d'Interfície](../S8-Inprocode/src/assets/Imatge1S8.jpg)
+![](./src/assets/Imatge1S8.jpg)
 
 ## Objectiu del Sprint
 L'objectiu d'aquest sprint serà aprendre a utilitzar llibreries de l'ecosistema frontend per ajudar-nos en la nostra tasca de crear interfícies per a l'usuari/ària.
