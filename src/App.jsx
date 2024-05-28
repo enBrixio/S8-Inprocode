@@ -1,7 +1,14 @@
+import Header from './layout/Header'
+
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+    <section className=' min-h-svh bg-orange-50'>
+      <Header />
+    </section>
+ 
+    </>
+
+
   )
 }
