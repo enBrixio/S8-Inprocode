@@ -14,7 +14,7 @@ function ChartCostes() {
                     'rgba(249,115,22,1)', // dc
                     'rgba(249,115,22,1)', // dj
                     'rgba(249,115,22,1)', // dv
-                    'rgba(249, 115, 22, 1)', // ds
+                    'rgba(249,115,22,1)', // ds
                     'rgba(15, 118, 100, 1)', // dg
                 ],
                 borderColor: [
@@ -39,6 +39,20 @@ function ChartCostes() {
             },
             title: {
                 display: false,
+            },
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false, // Elimina las líneas verticales
+                },
+            },
+            y: {
+                grid: {
+                    display: true, // Muestra las líneas horizontales
+                    color: 'rgba(200, 200, 200, 0.2)', // Cambia el color de las líneas horizontales si lo deseas
+                },
+                beginAtZero: true, // Asegúrate de que la escala comience en cero
             },
         },
     };
