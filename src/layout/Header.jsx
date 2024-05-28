@@ -4,14 +4,16 @@ import catalonia from '../assets/flag.webp'
 
 function Header() {
   return (
-    <header className='container mx-auto py-10 lg:py-20 lg:px-72 '>
-        <div className='flex gap-4 justify-center lg:justify-end '>
-        <img className='h-16 w-16 hover:rotate-180 transition-transform duration-[1500ms] cursor-pointer' src={uk} alt="" />
-        <img className='h-16 w-16 hover:rotate-180 transition-transform duration-[1500ms] cursor-pointer' src={spain} alt="" />
-        <img className='h-16 w-16 hover:rotate-180 transition-transform duration-[1500ms] cursor-pointer' src={catalonia} alt="" />
+    <header className='py-5 lg:py-10 px-4'>
+        <div className='flex gap-2 justify-center lg:justify-end'>
+          <img className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer' src={uk} alt="UK Flag" />
+          <img className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer' src={spain} alt="Spain Flag" />
+          <img className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer' src={catalonia} alt="Catalonia Flag" />
         </div>
     </header>
   );
 }
 
 export default Header;
+
+
