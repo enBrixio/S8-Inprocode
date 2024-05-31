@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import uk from '../assets/united-kingdom.webp';
 import spain from '../assets/spain.webp';
 import catalonia from '../assets/flag.webp';
+import chino from '../assets/chino.webp';
 
 function Header() {
   const { i18n } = useTranslation();
@@ -19,6 +20,12 @@ function Header() {
           src={uk}
           alt="UK Flag"
           onClick={() => changeLanguage('en')}
+        />
+        <img
+          className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
+          src={chino}
+          alt="China Flag"
+          onClick={() => changeLanguage('ch')}
         />
         <img
           className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
