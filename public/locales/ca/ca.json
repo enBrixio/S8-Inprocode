@@ -1,9 +1,18 @@
 {
     "main": {
         "balance": "Balanç Total",
-        "costes": "Costos",
-        "semana": "Última Setmana",
-        "costesHoy": "Costos d'Avui",
-        "porcentaje": "respecte al dia anterior"
+        "costes": "Despeses",
+        "semana": "Setmana",
+        "ultimaSemana": "Última Setmana",
+        "costesHoy": "Despeses d'avui",
+        "porcentaje": "respecte dia anterior",
+        "day1": "Dilluns",
+        "day2": "Dimarts",
+        "day3": "Dimecres",
+        "day4": "Dijous",
+        "day5": "Divendres",
+        "day6": "Dissabte",
+        "day7": "Diumenge"
     }
 }
+

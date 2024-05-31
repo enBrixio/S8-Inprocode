@@ -1,71 +1,86 @@
-// src/components/ChartCostes.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Bar } from 'react-chartjs-2';
-import { useSelector } from 'react-redux';
-import Chart from 'chart.js/auto';
+import { useTranslation } from 'react-i18next';
+import { calculateDailyPercentageChange } from '../Slice/balanceSlide';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+// Registro de los componentes necesarios
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 function ChartCostes() {
-  const dataPoints = useSelector((state) => state.balance.data);
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.balance.data);
+  const currentWeek = useSelector((state) => state.balance.currentWeek);
+  const currentDay = useSelector((state) => state.balance.currentDay);
+  const dailyPercentageChange = useSelector((state) => state.balance.dailyPercentageChange);
+  const { t } = useTranslation();
 
-  const data = {
-    responsive: true,
-    labels: ['dl', 'dt', 'dc', 'dj', 'dv', 'ds', 'dg'],
+  useEffect(() => {
+    dispatch(calculateDailyPercentageChange());
+  }, [dispatch, currentWeek, currentDay]);
+
+  const weekData = data[currentWeek];
+
+  const chartData = {
+    labels: [
+      t('main.day1'), t('main.day2'), t('main.day3'),
+      t('main.day4'), t('main.day5'), t('main.day6'), t('main.day7')
+    ],
     datasets: [
       {
-        data: dataPoints,
-        backgroundColor: [
-          'rgba(249,115,22,1)', // dl
-          'rgba(249,115,22,1)', // dt
-          'rgba(249,115,22,1)', // dc
-          'rgba(249,115,22,1)', // dj
-          'rgba(249,115,22,1)', // dv
-          'rgba(249,115,22,1)', // ds
-          'rgba(15, 118, 100, 1)', // dg
-        ],
-        borderColor: [
-          'rgba(249,115,22,1)', // dl
-          'rgba(249,115,22,1)', // dt
-          'rgba(249,115,22,1)', // dc
-          'rgba(249,115,22,1)', // dj
-          'rgba(249,115,22,1)', // dv
-          'rgba(249,115,22,1)', // ds
-          'rgba(15, 118, 100, 1)', // dg
-        ],
-        borderWidth: 1,
+        label: t('main.costes'),
+        data: weekData,
+        backgroundColor: weekData.map((_, index) => index === currentDay ? 'rgba(2, 133, 78,1)' : 'rgba(255, 128, 0,0.8)'),
+        borderColor: 'rgba(75,192,192,1)',
       },
     ],
   };
 
   const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: false,
-      },
-      title: {
-        display: false,
-      },
-    },
     scales: {
-      x: {
-        grid: {
-          display: false, // Elimina las líneas verticales
-        },
-      },
       y: {
-        grid: {
-          display: true, // Muestra las líneas horizontales
-          color: 'rgba(200, 200, 200, 0.2)', // Cambia el color de las líneas horizontales si lo deseas
-        },
-        beginAtZero: true, // Asegúrate de que la escala comience en cero
+        beginAtZero: true,
       },
     },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(tooltipItem) {
+            const value = tooltipItem.raw;
+            if (tooltipItem.dataIndex === currentDay) {
+              return `${t('main.costes')}: ${value} € (${dailyPercentageChange.toFixed(2)}%)`;
+            }
+            return `${t('main.costes')}: ${value} €`;
+          }
+        }
+      }
+    }
   };
 
-  return <Bar data={data} options={options} />;
+  return <Bar data={chartData} options={options} />;
 }
 
 export default ChartCostes;
+
+
+
+
 
 
 

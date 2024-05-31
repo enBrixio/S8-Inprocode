@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import uk from '../assets/united-kingdom.webp';
 import spain from '../assets/spain.webp';
 import catalonia from '../assets/flag.webp';
-import chino from '../assets/chino.webp';
+import china from '../assets/chino.webp'; // Agrega esta línea
 
 function Header() {
   const { i18n } = useTranslation();
@@ -23,12 +23,6 @@ function Header() {
         />
         <img
           className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
-          src={chino}
-          alt="China Flag"
-          onClick={() => changeLanguage('ch')}
-        />
-        <img
-          className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
           src={spain}
           alt="Spain Flag"
           onClick={() => changeLanguage('es')}
@@ -39,12 +33,19 @@ function Header() {
           alt="Catalonia Flag"
           onClick={() => changeLanguage('ca')}
         />
+        <img
+          className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
+          src={china}
+          alt="China Flag"
+          onClick={() => changeLanguage('ch')}
+        />
       </div>
     </header>
   );
 }
 
 export default Header;
+
 
 
 

@@ -1,10 +1,20 @@
 {
-    "main": {
+  "main": {
       "balance": "总余额",
       "costes": "费用",
-      "semana": "上周",
+      "semana": "周",
+      "ultimaSemana": "上周",
       "costesHoy": "今日费用",
-      "porcentaje": "相较前一天"
-    }
+      "porcentaje": "相较前一天",
+      "day1": "星期一",
+      "day2": "星期二",
+      "day3": "星期三",
+      "day4": "星期四",
+      "day5": "星期五",
+      "day6": "星期六",
+      "day7": "星期日"
   }
+}
+
+
   

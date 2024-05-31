@@ -2,8 +2,16 @@
     "main": {
         "balance":  "Balance Total",
         "costes":   "Costes",
-        "semana":   "Última Semana",
+        "semana":   "Semana",
+        "ultimaSemana": "Última Semana",
         "costesHoy": "Costes de Hoy",
-        "porcentaje": "respecto dia anteior"
+        "porcentaje": "respecto día anterior",
+        "day1": "Lunes",
+        "day2": "Martes",
+        "day3": "Miércoles",
+        "day4": "Jueves",
+        "day5": "Viernes",
+        "day6": "Sábado",
+        "day7": "Domingo"
     }
 }
