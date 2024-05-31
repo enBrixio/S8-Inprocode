@@ -1,0 +1,9 @@
+{
+    "main": {
+        "balance": "Balanç Total",
+        "costes": "Costos",
+        "semana": "Última Setmana",
+        "costesHoy": "Costos d'Avui",
+        "porcentaje": "respecte al dia anterior"
+    }
+}

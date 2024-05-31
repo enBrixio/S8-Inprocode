@@ -2,7 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  data: [10, 20, 15, 25, 22, 30, 10],
+  data: [320, 128, 457, 95, 210, 340, 400],
   total: 0,
   lastExpense: 0,
   percentageChange: 0,

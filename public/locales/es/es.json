@@ -1,0 +1,9 @@
+{
+    "main": {
+        "balance":  "Balance Total",
+        "costes":   "Costes",
+        "semana":   "Última Semana",
+        "costesHoy": "Costes de Hoy",
+        "porcentaje": "respecto dia anteior"
+    }
+}
