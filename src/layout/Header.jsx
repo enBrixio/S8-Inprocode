@@ -14,32 +14,36 @@ function Header() {
 
   return (
     <header className='py-5 lg:py-10 px-4'>
-      <div className='flex gap-2 justify-center lg:justify-end'>
-        <img
-          className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
-          src={uk}
-          alt="UK Flag"
-          onClick={() => changeLanguage('en')}
-        />
-        <img
-          className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
-          src={spain}
-          alt="Spain Flag"
-          onClick={() => changeLanguage('es')}
-        />
-        <img
-          className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
-          src={catalonia}
-          alt="Catalonia Flag"
-          onClick={() => changeLanguage('ca')}
-        />
-        <img
-          className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
-          src={china}
-          alt="China Flag"
-          onClick={() => changeLanguage('ch')}
-        />
-      </div>
+<div className='flex gap-2 justify-center lg:justify-end'>
+  <button
+    className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
+    onClick={() => changeLanguage('en')}
+    aria-label="Change language to English"
+  >
+    <img src={uk} alt="UK Flag" className='h-12 w-12'/>
+  </button>
+  <button
+    className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
+    onClick={() => changeLanguage('es')}
+    aria-label="Change language to Spanish"
+  >
+    <img src={spain} alt="Spain Flag" className='h-12 w-12'/>
+  </button>
+  <button
+    className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
+    onClick={() => changeLanguage('ca')}
+    aria-label="Change language to Catalan"
+  >
+    <img src={catalonia} alt="Catalonia Flag" className='h-12 w-12'/>
+  </button>
+  <button
+    className='h-12 w-12 hover:scale-125 transition-transform duration-500 cursor-pointer'
+    onClick={() => changeLanguage('ch')}
+    aria-label="Change language to Chinese"
+  >
+    <img src={china} alt="China Flag" className='h-12 w-12'/>
+  </button>
+</div>
     </header>
   );
 }
