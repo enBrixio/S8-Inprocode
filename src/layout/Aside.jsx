@@ -36,18 +36,24 @@ function Aside() {
           <span className="text-white text-2xl font-bold">{total} €</span>
         </div>
         <div className="flex items-center">
-          <img
-            src={arrowBack}
-            alt="arrow back"
-            className={`h-10 w-10 mr-2 cursor-pointer ${currentWeek === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
-            onClick={handlePreviousWeek}
-          />
-          <img
-            src={arrowFront}
-            alt="arrow front"
-            className={`h-10 w-10 cursor-pointer ${currentWeek === maxWeek ? 'opacity-50 cursor-not-allowed' : ''}`}
-            onClick={handleNextWeek}
-          />
+        <button
+  onClick={handlePreviousWeek}
+  disabled={currentWeek === 0}
+  className={`h-10 w-10 mr-2 ${currentWeek === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+  aria-label="Previous Week"
+>
+  <img src={arrowBack} alt="arrow back" className='h-10 w-10' />
+</button>
+
+<button
+  onClick={handleNextWeek}
+  disabled={currentWeek === maxWeek}
+  className={`h-10 w-10 ${currentWeek === maxWeek ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+  aria-label="Next Week"
+>
+  <img src={arrowFront} alt="arrow front" className='h-10 w-10' />
+</button>
+
         </div>
       </div>
     </aside>
