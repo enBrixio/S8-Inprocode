@@ -35,7 +35,20 @@ const balanceSlice = createSlice({
     calculateDailyPercentageChange: (state) => {
       const currentData = state.data[state.currentWeek];
       const currentDay = state.currentDay;
-      if (currentDay > 0) {
+
+      if (currentDay === 0) {
+        const previousWeek = state.currentWeek > 0 ? state.currentWeek - 1 : null;
+        if (previousWeek !== null) {
+          const previousData = state.data[previousWeek];
+          const sundayValue = previousData[6];
+          const mondayValue = currentData[0];
+          const difference = Math.abs(mondayValue - sundayValue);
+          const mean = (mondayValue + sundayValue) / 2;
+          state.dailyPercentageChange = mean ? (difference / mean) * 100 : 0;
+        } else {
+          state.dailyPercentageChange = 0;
+        }
+      } else if (currentDay > 0) {
         const todayValue = currentData[currentDay];
         const yesterdayValue = currentData[currentDay - 1];
         const difference = Math.abs(todayValue - yesterdayValue);
@@ -53,6 +66,7 @@ const balanceSlice = createSlice({
 
 export const { calculateTotal, calculatePercentageChange, calculateDailyPercentageChange, setCurrentWeek } = balanceSlice.actions;
 export default balanceSlice.reducer;
+
 
 
 
